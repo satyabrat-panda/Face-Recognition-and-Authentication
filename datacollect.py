@@ -32,22 +32,18 @@ def capture_images(name):
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
             cv2.putText(frame, f"Capturing {name}'s face", (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-        # Display the resulting frame
         cv2.imshow("Frame", frame)
         
-        # Stop capturing after 100 images
+        # Stop capturing after 200 images
         if count >= 200:
             print("Data Collection Completed")
             break
         
-        # Check for key press to exit
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-# Take name input and capture images
 name = input("Enter the name of the person: ")
 capture_images(name)
 
-# Release video capture and close all windows
 video.release()
 cv2.destroyAllWindows()

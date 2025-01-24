@@ -6,7 +6,6 @@ from PIL import Image
 # Create LBPH Face Recognizer
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
-# Path to the dataset directory
 path = "datasets"
 
 def get_image_paths_and_labels(path):
